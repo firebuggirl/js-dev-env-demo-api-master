@@ -39,3 +39,5 @@ To make changes:
 commit changes as normally would do, then
 
 git push heroku master
+
+...go to UI project and configure it for deployment
