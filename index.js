@@ -13,6 +13,8 @@ var MongoStore = require('connect-mongo')(session);//adding session as an argume
 const mongoSanitize = require('express-mongo-sanitize');//add June 20th, test to see if working...
 //const User = mongoose.model('User');
 var User = require('./models/User');
+var MongoClient = require('mongodb').MongoClient,
+    assert = require('assert');
 
 const app = express();
 
@@ -35,7 +37,7 @@ app.use(cors());
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(request, response) {
-  response.send('Hello World!')
+  response.send('Hello World!');
 });
 
 app.get('/users', function(req, res) {
@@ -45,8 +47,23 @@ app.get('/users', function(req, res) {
   //   {"id": 2,"firstName":"Tammy","lastName":"Norton","email":"tnorton@yahoo.com"},
   //   {"id": 3,"firstName":"Tina","lastName":"Lee","email":"lee.tina@hotmail.com"}
   // ]);
-  res.json(User);
-});
+
+const collection = db.collection('users');
+
+        collection.find().toArray(function(err, users) {
+          if (err) {
+            reject(err);
+          } else {
+            console.log(users);
+            //resolve(items);
+            res.json(users);
+          }
+
+    });
+ });
+
+
+
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));

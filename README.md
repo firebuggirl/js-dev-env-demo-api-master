@@ -16,24 +16,28 @@ run:
 
 2) heroku create
 
-Creating app... done, ⬢ pacific-springs-64027
-https://pacific-springs-64027.herokuapp.com/ | https://git.heroku.com/pacific-springs-64027.git
 
-3) heroku git:remote -a pacific-springs-64027
+Creating app... done, ⬢ limitless-beach-93044
+https://limitless-beach-93044.herokuapp.com/ | https://git.heroku.com/limitless-beach-93044.git
 
-returned: set git remote heroku to https://git.heroku.com/pacific-springs-64027.git
+3) heroku git:remote -a limitless-beach-93044
+
+returned:
+
+set git remote heroku to https://git.heroku.com/limitless-beach-93044.git
 
 
 4) git push heroku master
 
 returned: remote: Verifying deploy... done.
- https://pacific-springs-64027.herokuapp.com/
-To https://git.heroku.com/pacific-springs-64027.git
+  https://limitless-beach-93044.herokuapp.com/
+To https://git.heroku.com/limitless-beach-93044.git
 Register domain name for real app
 
 copy/paste in browser to test if API is working via Heroku:
- https://pacific-springs-64027.herokuapp.com/
- https://pacific-springs-64027.herokuapp.com/user
+  https://limitless-beach-93044.herokuapp.com/
+  https://limitless-beach-93044.herokuapp.com/user
+ 
 
 To make changes:
 commit changes as normally would do, then
